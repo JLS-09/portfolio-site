@@ -35,7 +35,6 @@ export default function ScrollAnimations() {
       (entries) => {
         const intersecting = entries.filter((e) => e.isIntersecting);
 
-        // Cards: sort by index within each scroll batch, then stagger
         const cards = intersecting
           .filter((e) => (e.target as HTMLElement).dataset.reveal === "card")
           .sort((a, b) => {
@@ -50,7 +49,6 @@ export default function ScrollAnimations() {
           observer.unobserve(el);
         });
 
-        // All other data-reveal elements: use their inline delay as before
         intersecting
           .filter((e) => (e.target as HTMLElement).dataset.reveal !== "card")
           .forEach((e) => {

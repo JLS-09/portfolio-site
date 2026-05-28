@@ -10,10 +10,18 @@ import shopfloorAppImg from "../../public/shopfloor_app.png";
 import shopfloorWebImg from "../../public/shopfloor_web.png";
 import profileImg from "../../public/IMG_1938.jpeg";
 import portfolioImg from "../../public/portfolio.png";
+import ahhaeducationImg from "../../public/ahhaeducation.png";
 
 const ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg";
 
 const PROJECTS = [
+  {
+    name: "AHHA Education website",
+    description: "Website for the NGO I interned at, built with a custom WordPress plugin and theme",
+    language: "PHP/JS",
+    repo: "https://ahhaeducation.org",
+    imageUrl: ahhaeducationImg,
+  },
   {
     name: "KMR Launcher",
     description: "Next-gen mod launcher for Kerbal Space Program",
@@ -37,7 +45,7 @@ const PROJECTS = [
   },
   {
     name: "Nodo",
-    description: "Social media app made from the ground up for people with mental disabilities, built with Blazor",
+    description: "Social media app made from the ground up for people with mental disabilities",
     language: "Blazor",
     repo: "",
     imageUrl: nodoImg,
