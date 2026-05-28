@@ -1,9 +1,54 @@
+@keyframes planetReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(93%) scaleX(0.08);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(93%) scaleX(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroPlanet,
+  .heroLabel,
+  .heroHeading,
+  .heroSub,
+  .heroActions,
+  .nav {
+    animation: none !important;
+  }
+}
+
 .nav {
   position: fixed;
   top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
+  animation: slideDown 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 .navPill {
@@ -75,7 +120,7 @@
   height: 180vw;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 0;  
+  z-index: 0;
   box-shadow:
     0 0 0 3.5px rgba(255, 242, 67, 0.8),
     0 0 30px 10px rgba(255, 242, 67, 0.6),
@@ -84,6 +129,7 @@
     0 0 350px 120px rgba(255, 242, 67, 0.15),
     0 10px 40px 3.5px rgba(255, 242, 67, 1),
     inset 0 0 20px 4px rgba(255, 242, 67, 0.95);
+  animation: planetReveal 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .heroContent {
@@ -102,6 +148,7 @@
   letter-spacing: 0.12em;
   color: var(--muted-light);
   text-transform: uppercase;
+  animation: fadeUp 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s both;
 }
 
 .heroHeading {
@@ -109,6 +156,7 @@
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
+  animation: fadeUp 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) 0.55s both;
 }
 
 .heroHeading em {
@@ -121,6 +169,7 @@
 .heroSub {
   font-size: 1.05rem;
   color: var(--muted-light);
+  animation: fadeUp 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) 0.72s both;
 }
 
 .heroActions {
@@ -129,6 +178,7 @@
   margin-top: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  animation: fadeUp 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) 0.9s both;
 }
 
 .btnPrimary {
@@ -469,7 +519,7 @@
   text-align: center;
   padding: 2rem;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   border-top: 1px solid var(--border);
   font-family: var(--font-geist-mono);
 }

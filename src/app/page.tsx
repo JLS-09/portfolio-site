@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import NavBar from "./NavBar";
+import ScrollAnimations from "./ScrollAnimations";
 import { MapPin } from 'lucide-react';
 import kmrLauncherImg from "../../public/kmr_launcher.png";
 import uurroosterhelperImg from "../../public/uurroosterhelper.png";
@@ -105,6 +106,7 @@ const STACK = [
 export default function Home() {
   return (
     <>
+      <ScrollAnimations />
       <NavBar />
 
       <section id="home" className={styles.hero}>
@@ -127,24 +129,24 @@ export default function Home() {
       </section>
 
       <section id="about" className={styles.section}>
-        <p className={styles.sectionLabel}>Get to know me</p>
-        <h2 className={styles.sectionHeading}>About <em>Me</em></h2>
+        <p className={styles.sectionLabel} data-reveal>Get to know me</p>
+        <h2 className={styles.sectionHeading} data-reveal style={{ transitionDelay: "0.1s" }}>About <em>Me</em></h2>
 
         <div className={styles.aboutGrid}>
           <div className={styles.aboutLeft}>
-            <Image src={profileImg} width={200} height={200} alt="Jules Van Nevel" style={{ borderRadius: '50%' }} />
+            <Image src={profileImg} width={200} height={200} alt="Jules Van Nevel" style={{ borderRadius: '50%' }} data-reveal />
 
-            <p className={styles.aboutBio}>
+            <p className={styles.aboutBio} data-reveal style={{ transitionDelay: "0.1s" }}>
               I am a passionate full-stack developer with a keen interest in creating efficient and scalable web and desktop applications. I enjoy tackling complex problems and turning ideas into reality through code.
             </p>
             <hr className={styles.aboutDividerH} />
-            <div className={styles.aboutLocation}><MapPin /> Ghent, Belgium</div>
+            <div className={styles.aboutLocation} data-reveal style={{ transitionDelay: "0.2s" }}><MapPin /> Ghent, Belgium</div>
           </div>
 
           <div className={styles.aboutDivider} />
 
           <div className={styles.aboutRight}>
-            <div className={styles.cvBlock}>
+            <div className={styles.cvBlock} data-reveal>
               <h3 className={styles.cvTitle}>Education</h3>
               <div className={styles.cvRow}>
                 <span className={styles.cvInstitution}>HOGENT</span>
@@ -153,7 +155,7 @@ export default function Home() {
               <p className={styles.cvDegree}>Applied Information Technology</p>
             </div>
 
-            <div className={styles.cvBlock}>
+            <div className={styles.cvBlock} data-reveal style={{ transitionDelay: "0.1s" }}>
               <h3 className={styles.cvTitle}>Experience</h3>
               <div className={styles.cvRow}>
                 <span className={styles.cvInstitution}>AHHA Education Cambodia</span>
@@ -165,7 +167,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className={styles.cvBlock}>
+            <div className={styles.cvBlock} data-reveal style={{ transitionDelay: "0.2s" }}>
               <h3 className={styles.cvTitle}>Tech Stack</h3>
               <div className={styles.stackChips}>
                 {STACK.map((tech) => (
@@ -187,10 +189,10 @@ export default function Home() {
       </section>
 
       <section id="projects" className={styles.section}>
-        <p className={styles.sectionLabel}>What I&apos;ve built</p>
-        <h2 className={styles.sectionHeading}>My <em>Projects</em></h2>
+        <p className={styles.sectionLabel} data-reveal>What I&apos;ve built</p>
+        <h2 className={styles.sectionHeading} data-reveal style={{ transitionDelay: "0.1s" }}>My <em>Projects</em></h2>
 
-        <div className={styles.projectGrid}>
+        <div className={styles.projectGrid} data-stagger-grid data-duration="1s">
           {PROJECTS.map((project) => (
             <a
               key={project.name}
@@ -198,10 +200,11 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.projectCard}
+              data-reveal
             >
               {project.imageUrl ? (
                 <div className={styles.projectImage} style={{ position: "relative" }}>
-                  <Image fill src={project.imageUrl} alt={project.name} style={{ objectFit: "cover" }} 
+                  <Image fill src={project.imageUrl} alt={project.name} style={{ objectFit: "cover" }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
               ) : (
@@ -218,17 +221,17 @@ export default function Home() {
       </section>
 
       <section id="contact" className={styles.section}>
-        <p className={styles.sectionLabel}>Get in touch</p>
-        <h2 className={styles.sectionHeading}>Contact <em>Me</em></h2>
+        <p className={styles.sectionLabel} data-reveal>Get in touch</p>
+        <h2 className={styles.sectionHeading} data-reveal style={{ transitionDelay: "0.1s" }}>Contact <em>Me</em></h2>
 
         <div className={styles.contactBody}>
-          <p className={styles.contactSub}>
+          <p className={styles.contactSub} data-reveal>
             Have a question or want to work together? Feel free to reach out.
           </p>
-          <a href="mailto:jules.van.nevel@gmail.com" className={styles.contactEmail}>
+          <a href="mailto:jules.van.nevel@gmail.com" className={styles.contactEmail} data-reveal style={{ transitionDelay: "0.1s" }}>
             jules.van.nevel@gmail.com
           </a>
-          <div className={styles.socialLinks}>
+          <div className={styles.socialLinks} data-reveal style={{ transitionDelay: "0.2s" }}>
             <a href="https://github.com/JLS-09" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
               GitHub
             </a>
@@ -239,8 +242,8 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        Jules Van Nevel · {new Date().getFullYear()}
+      <footer className={styles.footer} data-reveal="left">
+        © 2026 Jules Van Nevel. All rights reserved.
       </footer>
     </>
   );
