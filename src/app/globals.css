@@ -65,9 +65,20 @@ hr {
   transform: translateX(-16px);
 }
 
+[data-reveal="card"] {
+  opacity: 0;
+  transform: perspective(700px) translateY(48px) rotateX(14deg);
+  transform-origin: center bottom;
+}
+
 [data-reveal].visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+[data-reveal="card"].visible {
+  opacity: 1;
+  transform: perspective(700px) translateY(0) rotateX(0);
 }
 
 /* No-JS fallback and reduced-motion: show everything */

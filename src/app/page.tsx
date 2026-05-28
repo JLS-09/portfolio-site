@@ -9,6 +9,7 @@ import nodoImg from "../../public/nodo.png";
 import shopfloorAppImg from "../../public/shopfloor_app.png";
 import shopfloorWebImg from "../../public/shopfloor_web.png";
 import profileImg from "../../public/IMG_1938.jpeg";
+import portfolioImg from "../../public/portfolio.png";
 
 const ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg";
 
@@ -81,7 +82,7 @@ const PROJECTS = [
     description: "This portfolio, built with Next.js",
     language: "TypeScript",
     repo: "https://github.com/JLS-09/portfolio-site",
-    imageUrl: "",
+    imageUrl: portfolioImg,
   },
 ];
 
@@ -192,15 +193,16 @@ export default function Home() {
         <p className={styles.sectionLabel} data-reveal>What I&apos;ve built</p>
         <h2 className={styles.sectionHeading} data-reveal style={{ transitionDelay: "0.1s" }}>My <em>Projects</em></h2>
 
-        <div className={styles.projectGrid} data-stagger-grid data-duration="1s">
-          {PROJECTS.map((project) => (
+        <div className={styles.projectGrid}>
+          {PROJECTS.map((project, index) => (
             <a
               key={project.name}
               href={project.repo}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.projectCard}
-              data-reveal
+              data-reveal="card"
+              data-card-index={String(index)}
             >
               {project.imageUrl ? (
                 <div className={styles.projectImage} style={{ position: "relative" }}>
