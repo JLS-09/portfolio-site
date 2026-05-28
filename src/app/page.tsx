@@ -202,31 +202,47 @@ export default function Home() {
         <h2 className={styles.sectionHeading} data-reveal style={{ transitionDelay: "0.1s" }}>My <em>Projects</em></h2>
 
         <div className={styles.projectGrid}>
-          {PROJECTS.map((project, index) => (
-            <a
-              key={project.name}
-              href={project.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectCard}
-              data-reveal="card"
-              data-card-index={String(index)}
-            >
-              {project.imageUrl ? (
-                <div className={styles.projectImage} style={{ position: "relative" }}>
-                  <Image fill src={project.imageUrl} alt={project.name} style={{ objectFit: "cover" }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+          {PROJECTS.map((project, index) => {
+            const cardContent = (
+              <>
+                {project.imageUrl ? (
+                  <div className={styles.projectImage} style={{ position: "relative" }}>
+                    <Image fill src={project.imageUrl} alt={project.name} style={{ objectFit: "cover" }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </div>
+                ) : (
+                  <div className={styles.projectImage}>No screenshot</div>
+                )}
+                <div className={styles.projectMeta}>
+                  <span className={styles.projectName}>{project.name}</span>
+                  <span className={styles.projectLang}>{project.language}</span>
                 </div>
-              ) : (
-                <div className={styles.projectImage}>No screenshot</div>
-              )}
-              <div className={styles.projectMeta}>
-                <span className={styles.projectName}>{project.name}</span>
-                <span className={styles.projectLang}>{project.language}</span>
+                <p className={styles.projectDesc}>{project.description}</p>
+              </>
+            );
+            return project.repo ? (
+              <a
+                key={project.name}
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.projectCard}
+                data-reveal="card"
+                data-card-index={String(index)}
+              >
+                {cardContent}
+              </a>
+            ) : (
+              <div
+                key={project.name}
+                className={styles.projectCard}
+                data-reveal="card"
+                data-card-index={String(index)}
+              >
+                {cardContent}
               </div>
-              <p className={styles.projectDesc}>{project.description}</p>
-            </a>
-          ))}
+            );
+          })}
         </div>
       </section>
 
