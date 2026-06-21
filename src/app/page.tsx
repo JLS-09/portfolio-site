@@ -24,7 +24,7 @@ const PROJECTS = [
   },
   {
     name: "KMR Launcher",
-    description: "Next-gen mod launcher for Kerbal Space Program",
+    description: "Next-gen mod launcher for Kerbal Space Program - currently in development",
     language: "Avalonia",
     repo: "https://github.com/JLS-09/KMR-launcher",
     imageUrl: kmrLauncherImg,
@@ -59,7 +59,7 @@ const PROJECTS = [
   },
   {
     name: "Shopfloor application web dashboard",
-    description: "Delaware shopfloor web dashboard for management of production lines, built with React",
+    description: "Delaware shopfloor web dashboard for management of production lines",
     language: "React",
     repo: "",
     imageUrl: shopfloorWebImg,
@@ -146,7 +146,7 @@ export default function Home() {
             <Image src={profileImg} width={200} height={200} alt="Jules Van Nevel" style={{ borderRadius: '50%' }} data-reveal />
 
             <p className={styles.aboutBio} data-reveal style={{ transitionDelay: "0.1s" }}>
-              I am a passionate full-stack developer with a keen interest in creating efficient and scalable web and desktop applications. I enjoy tackling complex problems and turning ideas into reality through code.
+              I am a passionate full-stack developer with a keen interest in creating efficient and scalable web and desktop applications. I enjoy tackling complex problems and turning ideas into reality through code. I love studying and learning new things, I want to know how every intricate detail of a system works. After my studies I would love to work in the aerospace industry, working on embedded systems and software for spacecraft.
             </p>
             <hr className={styles.aboutDividerH} />
             <div className={styles.aboutLocation} data-reveal style={{ transitionDelay: "0.2s" }}><MapPin /> Ghent, Belgium</div>
@@ -157,11 +157,35 @@ export default function Home() {
           <div className={styles.aboutRight}>
             <div className={styles.cvBlock} data-reveal>
               <h3 className={styles.cvTitle}>Education</h3>
-              <div className={styles.cvRow}>
-                <span className={styles.cvInstitution}>HOGENT</span>
-                <span className={styles.cvYear}>2023 - 2026</span>
+
+              <div data-reveal style={{ transitionDelay: "0.05s" }}>
+                <h4 className={styles.cvSubtitle}>Planned future Studies</h4>
+
+                <div className={styles.cvRow}>
+                  <span className={styles.cvInstitution}>Luleå University of Technology</span>
+                </div>
+                <p className={styles.cvDegree}>Spacemaster</p>
+
+                <div className={styles.cvRow}>
+                  <span className={styles.cvInstitution}>Ghent University</span>
+                </div>
+                <p className={styles.cvDegree}>Master of Science in Information Engineering Technology</p>
               </div>
-              <p className={styles.cvDegree}>Applied Information Technology</p>
+
+              <div data-reveal style={{ transitionDelay: "0.1s" }}>
+                <h4 className={styles.cvSubtitle}>Current Studies</h4>
+
+                <div className={styles.cvRow}>
+                  <span className={styles.cvInstitution}>HOGENT</span>
+                  <span className={styles.cvYear}>2023 - 2026</span>
+                </div>
+                <p className={styles.cvDegree}>Applied Information Technology</p>
+              </div>
+
+              {/* <div data-reveal style={{ transitionDelay: "0.15s" }}>
+                <h4 className={styles.cvSubtitle}>Past Studies</h4>
+
+              </div> */}
             </div>
 
             <div className={styles.cvBlock} data-reveal style={{ transitionDelay: "0.1s" }}>

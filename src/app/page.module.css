@@ -364,6 +364,13 @@
   font-size: 1rem;
 }
 
+.cvSubtitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-bottom: 0.3rem;
+  color: var(--accent);
+}
+
 .cvYear {
   font-size: 0.9rem;
   color: var(--muted-light);
