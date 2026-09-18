@@ -66,7 +66,7 @@ const PROJECTS = [
   },
   {
     name: "Kingdomino",
-    description: "Virtual adaptation of the popular board game, built with JavaFX",
+    description: "Virtual adaptation of the board game Kingdomino, built with JavaFX",
     language: "Java",
     repo: "",
     imageUrl: "",
@@ -95,21 +95,22 @@ const PROJECTS = [
 ];
 
 const STACK = [
-  { name: "C#", icon: "csharp" },
-  { name: ".NET", icon: "dotnet" },
-  { name: "HTML", icon: "html" },
-  { name: "CSS", icon: "css" },
-  { name: "TypeScript", icon: "typescript" },
-  { name: "JavaScript", icon: "javascript" },
-  { name: "Node.js", icon: "nodejs" },
-  { name: "Next.js", icon: "nextjs" },
-  { name: "React", icon: "reactjs" },
-  { name: "Java", icon: "java" },
-  { name: "Python", icon: "python" },
-  { name: "php", icon: "php" },
-  { name: "MongoDB", icon: "mongodb" },
-  { name: "Git", icon: "git" },
-  { name: "Docker", icon: "docker" },
+  { name: "C#", icon: `${ICON_CDN}/csharp.svg` },
+  { name: ".NET", icon: `${ICON_CDN}/dotnet.svg` },
+  { name: "Avalonia", icon: "https://cdn.simpleicons.org/avaloniaui/165BFF" },
+  { name: "HTML", icon: `${ICON_CDN}/html.svg` },
+  { name: "CSS", icon: `${ICON_CDN}/css.svg` },
+  { name: "TypeScript", icon: `${ICON_CDN}/typescript.svg` },
+  { name: "JavaScript", icon: `${ICON_CDN}/javascript.svg` },
+  { name: "Node.js", icon: `${ICON_CDN}/nodejs.svg` },
+  { name: "Next.js", icon: `${ICON_CDN}/nextjs.svg` },
+  { name: "React", icon: `${ICON_CDN}/reactjs.svg` },
+  { name: "Java", icon: `${ICON_CDN}/java.svg` },
+  { name: "Python", icon: `${ICON_CDN}/python.svg` },
+  { name: "php", icon: `${ICON_CDN}/php.svg` },
+  { name: "MongoDB", icon: `${ICON_CDN}/mongodb.svg` },
+  { name: "Git", icon: `${ICON_CDN}/git.svg` },
+  { name: "Docker", icon: `${ICON_CDN}/docker.svg` },
 ];
 
 export default function Home() {
@@ -165,27 +166,27 @@ export default function Home() {
                   <span className={styles.cvInstitution}>Luleå University of Technology</span>
                 </div>
                 <p className={styles.cvDegree}>Spacemaster</p>
-
-                <div className={styles.cvRow}>
-                  <span className={styles.cvInstitution}>Ghent University</span>
-                </div>
-                <p className={styles.cvDegree}>Master of Science in Information Engineering Technology</p>
               </div>
 
               <div data-reveal style={{ transitionDelay: "0.1s" }}>
                 <h4 className={styles.cvSubtitle}>Current Studies</h4>
 
                 <div className={styles.cvRow}>
+                  <span className={styles.cvInstitution}>Ghent University</span>
+                  <span className={styles.cvYear}>2026 - now</span>
+                </div>
+                <p className={styles.cvDegree}>Linking Course Master of Science in Information Engineering Technology</p>
+              </div>
+
+              <div data-reveal style={{ transitionDelay: "0.15s" }}>
+                <h4 className={styles.cvSubtitle}>Past Studies</h4>
+
+                <div className={styles.cvRow}>
                   <span className={styles.cvInstitution}>HOGENT</span>
                   <span className={styles.cvYear}>2023 - 2026</span>
                 </div>
-                <p className={styles.cvDegree}>Applied Information Technology</p>
+                <p className={styles.cvDegree}>Applied Information Technology - Full stack developer</p>
               </div>
-
-              {/* <div data-reveal style={{ transitionDelay: "0.15s" }}>
-                <h4 className={styles.cvSubtitle}>Past Studies</h4>
-
-              </div> */}
             </div>
 
             <div className={styles.cvBlock} data-reveal style={{ transitionDelay: "0.1s" }}>
@@ -206,7 +207,7 @@ export default function Home() {
                 {STACK.map((tech) => (
                   <span key={tech.name} className={styles.chip}>
                     <img
-                      src={`${ICON_CDN}/${tech.icon}.svg`}
+                      src={tech.icon}
                       alt=""
                       width={14}
                       height={14}
