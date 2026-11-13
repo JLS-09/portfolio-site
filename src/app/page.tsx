@@ -205,6 +205,17 @@ export default function Home() {
             <div className={styles.cvBlock} data-reveal style={{ transitionDelay: "0.1s" }}>
               <h3 className={styles.cvTitle}>Experience</h3>
               <div className={styles.cvRow}>
+                <span className={styles.cvInstitution}>Antares Rocket Club</span>
+                <span className={styles.cvYear}>September 2026 - Now</span>
+              </div>
+              <p className={styles.cvDegree}>Software Engineer - Ghent, Belgium</p>
+              <ul className={styles.cvBullets}>
+                <li>Writing code for our next rocket and supporting systems</li>
+              </ul>
+
+              <div style={{ height: 20 }} />
+
+              <div className={styles.cvRow}>
                 <span className={styles.cvInstitution}>AHHA Education Cambodia</span>
                 <span className={styles.cvYear}>March - May 2026</span>
               </div>
