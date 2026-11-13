@@ -11,16 +11,17 @@ import shopfloorWebImg from "../../public/shopfloor_web.png";
 import profileImg from "../../public/IMG_1938.jpeg";
 import portfolioImg from "../../public/portfolio.png";
 import ahhaeducationImg from "../../public/ahhaeducation.png";
+import lockinImg from "../../public/lockin.png";
 
 const ICON_CDN = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg";
 
 const PROJECTS = [
   {
-    name: "AHHA Education website",
-    description: "Website for the NGO I interned at, built with a custom WordPress plugin and theme",
-    language: "PHP/JS",
-    repo: "https://ahhaeducation.org",
-    imageUrl: ahhaeducationImg,
+    name: "Lockin",
+    description: "Personal study app: track class activities and run study sessions that block distracting apps and sites.",
+    language: "Tauri/Svelte/Rust",
+    repo: "https://github.com/JLS-09/Lockin",
+    imageUrl: lockinImg,
   },
   {
     name: "KMR Launcher",
@@ -28,6 +29,13 @@ const PROJECTS = [
     language: "Avalonia",
     repo: "https://github.com/JLS-09/KMR-launcher",
     imageUrl: kmrLauncherImg,
+  },
+  {
+    name: "AHHA Education website",
+    description: "Website for the NGO I interned at, built with a custom WordPress plugin and theme",
+    language: "PHP/JS",
+    repo: "https://ahhaeducation.org",
+    imageUrl: ahhaeducationImg,
   },
   {
     name: "KMR API",
@@ -96,6 +104,8 @@ const PROJECTS = [
 
 const STACK = [
   { name: "C#", icon: `${ICON_CDN}/csharp.svg` },
+  { name: "C", icon: `${ICON_CDN}/c.svg` },
+  { name: "C++", icon: `${ICON_CDN}/cpp.svg` },
   { name: ".NET", icon: `${ICON_CDN}/dotnet.svg` },
   { name: "Avalonia", icon: "https://cdn.simpleicons.org/avaloniaui/165BFF" },
   { name: "HTML", icon: `${ICON_CDN}/html.svg` },
@@ -103,8 +113,11 @@ const STACK = [
   { name: "TypeScript", icon: `${ICON_CDN}/typescript.svg` },
   { name: "JavaScript", icon: `${ICON_CDN}/javascript.svg` },
   { name: "Node.js", icon: `${ICON_CDN}/nodejs.svg` },
-  { name: "Next.js", icon: `${ICON_CDN}/nextjs.svg` },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nextjs-light.svg" },
   { name: "React", icon: `${ICON_CDN}/reactjs.svg` },
+  { name: "Tauri", icon: "https://cdn.simpleicons.org/tauri/24C8D8" },
+  { name: "Svelte", icon: `${ICON_CDN}/svelte.svg` },
+  { name: "Rust", icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/rust-dark.svg" },
   { name: "Java", icon: `${ICON_CDN}/java.svg` },
   { name: "Python", icon: `${ICON_CDN}/python.svg` },
   { name: "php", icon: `${ICON_CDN}/php.svg` },
